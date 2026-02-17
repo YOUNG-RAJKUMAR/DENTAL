@@ -6,11 +6,12 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-overflow:hidden; /* 🚫 No scrolling */
 height:100vh;
 background:linear-gradient(135deg,#0a6c74,#00b3b3);
 color:white;
 }
+
+/* Main Container */
 
 .container{
 display:flex;
@@ -18,7 +19,7 @@ height:100vh;
 width:100%;
 }
 
-/* LEFT */
+/* LEFT SIDE */
 
 .left{
 flex:1;
@@ -30,7 +31,7 @@ animation:fadeIn 1.5s ease;
 }
 
 .logo{
-font-size:24px;
+font-size:22px;
 margin-bottom:20px;
 font-weight:700;
 }
@@ -45,6 +46,7 @@ margin-bottom:20px;
 font-size:18px;
 margin-bottom:40px;
 opacity:0.9;
+max-width:500px;
 }
 
 .stats{
@@ -53,7 +55,7 @@ gap:40px;
 margin-bottom:40px;
 }
 
-.stats h3{
+.stat h3{
 font-size:36px;
 }
 
@@ -75,7 +77,7 @@ transform:scale(1.05);
 background:#e0ffff;
 }
 
-/* RIGHT */
+/* RIGHT SIDE */
 
 .right{
 flex:1;
@@ -83,11 +85,13 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-gap:40px;
+gap:30px;
 padding:40px;
 }
 
-.card{
+/* Glass Card */
+
+.glass-card{
 background:rgba(255,255,255,0.15);
 backdrop-filter:blur(15px);
 padding:40px;
@@ -97,16 +101,18 @@ box-shadow:0 15px 30px rgba(0,0,0,0.2);
 animation:float 4s ease-in-out infinite;
 }
 
-.card h3{
+.glass-card h3{
 margin-bottom:20px;
 }
 
-.card ul{
+.glass-card ul{
 list-style:none;
 line-height:2;
 }
 
-.contact-box{
+/* Contact Card */
+
+.contact-card{
 background:rgba(255,255,255,0.15);
 backdrop-filter:blur(15px);
 padding:25px 40px;
@@ -115,7 +121,7 @@ width:80%;
 text-align:center;
 }
 
-/* ANIMATIONS */
+/* Animations */
 
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(40px);}
@@ -128,20 +134,108 @@ to{opacity:1; transform:translateY(0);}
 100%{transform:translateY(0px);}
 }
 
-/* Responsive */
+/* ============================= */
+/* 📱 MOBILE (up to 600px) */
+/* ============================= */
 
-@media(max-width:900px){
-.container{
-flex-direction:column;
-overflow:auto;
-}
+@media (max-width:600px){
 
 body{
-overflow:auto;
+height:auto;
+}
+
+.container{
+flex-direction:column;
+height:auto;
+padding:30px 20px;
+}
+
+.left{
+padding:20px 0;
+text-align:center;
+align-items:center;
+}
+
+.title{
+font-size:28px;
+}
+
+.subtitle{
+font-size:14px;
+}
+
+.stats{
+flex-direction:column;
+gap:15px;
+}
+
+.right{
+padding:20px 0;
+}
+
+.glass-card,
+.contact-card{
+width:100%;
+}
+
+}
+
+/* ============================= */
+/* 📲 TABLET (601px - 1024px) */
+/* ============================= */
+
+@media (min-width:601px) and (max-width:1024px){
+
+.container{
+flex-direction:column;
 }
 
 .left, .right{
-padding:30px;
+padding:40px;
 text-align:center;
+align-items:center;
 }
+
+.title{
+font-size:36px;
+}
+
+.glass-card,
+.contact-card{
+width:70%;
+}
+
+}
+
+/* ============================= */
+/* 💻 LAPTOP (1025px - 1440px) */
+/* ============================= */
+
+@media (min-width:1025px) and (max-width:1440px){
+
+.title{
+font-size:42px;
+}
+
+.glass-card,
+.contact-card{
+width:75%;
+}
+
+}
+
+/* ============================= */
+/* 🖥 LARGE DESKTOP (1441px+) */
+/* ============================= */
+
+@media (min-width:1441px){
+
+.title{
+font-size:60px;
+}
+
+.subtitle{
+font-size:20px;
+}
+
 }
