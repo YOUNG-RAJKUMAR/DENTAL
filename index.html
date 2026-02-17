@@ -1,0 +1,100 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Phone, MapPin, Clock, Smile } from "lucide-react";
+
+export default function BangangaDentalLanding() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 text-gray-800">
+      {/* Hero */}
+      <section className="relative">
+        <div className="h-[420px] w-full bg-gray-200 flex items-center justify-center">
+          {/* Replace this div with your clinic image if needed */}
+          <span className="text-gray-500">Clinic Image Here</span>
+        </div>
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Banganga Dental Home
+          </h1>
+          <p className="text-lg text-white max-w-2xl mb-6">
+            Healthy Smile, Happy Life — Professional and Caring Dental Services
+          </p>
+          <Button className="rounded-2xl text-lg px-6 py-5">
+            Book Appointment
+          </Button>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-semibold text-center mb-10">
+          Our Services
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            "General Checkup",
+            "Teeth Cleaning",
+            "Tooth Extraction",
+            "Root Canal Treatment",
+            "Dental Implants",
+            "Cosmetic Dentistry",
+          ].map((service, i) => (
+            <Card key={i} className="rounded-2xl shadow-md">
+              <CardContent className="p-6 flex flex-col items-center text-center">
+                <Smile className="w-10 h-10 mb-4" />
+                <p className="font-medium">{service}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* About */}
+      <section className="py-16 bg-white px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold mb-6">About Us</h2>
+          <p className="text-gray-600 leading-relaxed">
+            Banganga Dental Home provides high-quality dental care with modern
+            equipment and experienced professionals. Our mission is to deliver
+            comfortable, affordable, and reliable dental treatment for every
+            patient. Your smile is our priority.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="py-16 px-6 bg-blue-50">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+          <Card className="rounded-2xl">
+            <CardContent className="p-6 text-center">
+              <Phone className="mx-auto mb-3" />
+              <p className="font-medium">Call Us</p>
+              <p className="text-gray-600">+977-XXXXXXXXXX</p>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-2xl">
+            <CardContent className="p-6 text-center">
+              <MapPin className="mx-auto mb-3" />
+              <p className="font-medium">Location</p>
+              <p className="text-gray-600">Banganga, Nepal</p>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-2xl">
+            <CardContent className="p-6 text-center">
+              <Clock className="mx-auto mb-3" />
+              <p className="font-medium">Opening Hours</p>
+              <p className="text-gray-600">Sun - Fri : 9 AM - 6 PM</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-6 text-center">
+        <p>© {new Date().getFullYear()} Banganga Dental Home. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
