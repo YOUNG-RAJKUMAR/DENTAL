@@ -22,3 +22,4 @@ function smoothScroll(e) {
         behavior: "smooth"
     });
 }
+
